@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CARGOO — conectamos caminhoneiros autônomos a cargas e fretes de retorno. Nunca mais rode de baú vazio.">
+    <meta name="author" content="Equipe CARGOO">
+    <title>CARGOO — Nenhum caminhão roda vazio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🚛</text></svg>">
+</head>
+
+<body>
+
+<header class="topo" id="topo">
+    <nav class="navbar" aria-label="Navegação principal">
+        <a href="#topo" class="logo">CARG<span class="logo-o">O</span>O</a>
+
+        <button class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="menu" id="menu">
+            <li><a href="#problema">O problema</a></li>
+            <li><a href="#motoristas">Para motoristas</a></li>
+            <li><a href="#empresas">Para empresas</a></li>
+            <li><a href="#simulador">Simulador</a></li>
+            <li><a href="#cadastro" class="btn btn-laranja btn-menu">Quero testar</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-texto">
+            <p class="eyebrow">Fretes e cargas de retorno · Brasil</p>
+            <h1>Nenhum caminhão<br>deveria rodar <span class="riscado">vazio</span></h1>
+            <p class="hero-sub">
+                O CARGOO conecta caminhoneiros autônomos a cargas no caminho de volta,
+                e ajuda empresas a despachar mais barato com quem já está retornando
+                para a região delas. Todo mundo ganha — menos o frete vazio.
+            </p>
+            <div class="hero-acoes">
+                <a href="#cadastro" class="btn btn-laranja">Sou motorista</a>
+                <a href="#cadastro" class="btn btn-verde">Tenho cargas</a>
+            </div>
+        </div>
+
+        <div class="hero-app" aria-hidden="true">
+            <div class="telefone">
+                <div class="telefone-topo">
+                    <span class="ponto"></span> CARGOO · Cargas perto de você
+                </div>
+                <div class="card-carga destaque">
+                    <div class="rota">
+                        <span class="cidade">Maringá, PR</span>
+                        <span class="seta">→</span>
+                        <span class="cidade">São Paulo, SP</span>
+                    </div>
+                    <div class="carga-info">
+                        <span>Carga seca · 12 t</span>
+                        <strong>R$ 4.850</strong>
+                    </div>
+                    <button class="btn-mini" type="button">Aceitar frete</button>
+                </div>
+                <div class="card-carga">
+                    <div class="rota">
+                        <span class="cidade">Londrina, PR</span>
+                        <span class="seta">→</span>
+                        <span class="cidade">Curitiba, PR</span>
+                    </div>
+                    <div class="carga-info">
+                        <span>Paletizada · 8 t</span>
+                        <strong>R$ 2.300</strong>
+                    </div>
+                </div>
+                <div class="card-carga">
+                    <div class="rota">
+                        <span class="cidade">Cascavel, PR</span>
+                        <span class="seta">→</span>
+                        <span class="cidade">Itajaí, SC</span>
+                    </div>
+                    <div class="carga-info">
+                        <span>Refrigerada · 14 t</span>
+                        <strong>R$ 5.100</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <svg class="estrada" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="0" y1="30" x2="1200" y2="30" class="faixa"></line>
+    </svg>
+</header>
+
+<main>
+
+    <!-- ===================== O PROBLEMA ===================== -->
+    <section id="problema" class="secao secao-escura">
+        <div class="container">
+            <p class="eyebrow eyebrow-claro">O problema</p>
+            <h2>O frete de retorno é o dinheiro<br>que fica na estrada</h2>
+            <p class="secao-sub">
+                Depois de entregar uma carga, milhares de caminhoneiros voltam para casa
+                com o baú vazio: gastando diesel, pedágio e horas de trabalho sem receber
+                nada por isso. E do outro lado, empresas pagam caro para enviar cargas
+                exatamente para essas mesmas regiões.
+            </p>
+
+            <div class="numeros">
+                <article class="numero">
+                    <strong class="contador" data-alvo="40" data-sufixo="%">0%</strong>
+                    <p>dos quilômetros rodados por caminhões no Brasil são feitos sem carga*</p>
+                </article>
+                <article class="numero">
+                    <strong class="contador" data-alvo="2" data-prefixo="R$ " data-sufixo=",30/km">R$ 0</strong>
+                    <p>é o custo médio estimado de rodar um caminhão truck — mesmo vazio*</p>
+                </article>
+                <article class="numero">
+                    <strong class="contador" data-alvo="30" data-sufixo="%">0%</strong>
+                    <p>de redução possível no custo logístico ao aproveitar fretes de retorno*</p>
+                </article>
+            </div>
+            <p class="nota">*Valores ilustrativos usados no projeto acadêmico para dimensionar o problema.</p>
+        </div>
+    </section>
+
+    <!-- ===================== COMO FUNCIONA ===================== -->
+    <section class="secao" id="como-funciona">
+        <div class="container duo">
+
+            <article class="lado lado-motorista" id="motoristas">
+                <span class="placa placa-laranja">PARA MOTORISTAS</span>
+                <h3>Encontre carga no caminho de volta</h3>
+                <ul class="lista-passos">
+                    <li>
+                        <strong>Informe sua rota de retorno.</strong>
+                        Diga para onde você vai voltar e quando.
+                    </li>
+                    <li>
+                        <strong>Receba cargas compatíveis.</strong>
+                        O CARGOO cruza sua rota com cargas publicadas pelas empresas no trajeto.
+                    </li>
+                    <li>
+                        <strong>Aceite e fature.</strong>
+                        Negocie direto pelo app, transporte e receba. Sem atravessador.
+                    </li>
+                </ul>
+                <a href="#cadastro" class="btn btn-laranja">Cadastrar meu caminhão</a>
+            </article>
+
+            <article class="lado lado-empresa" id="empresas">
+                <span class="placa placa-verde">PARA EMPRESAS</span>
+                <h3>Despache com quem já está voltando</h3>
+                <ul class="lista-passos">
+                    <li>
+                        <strong>Publique sua carga.</strong>
+                        Origem, destino, tipo de carga, peso e prazo.
+                    </li>
+                    <li>
+                        <strong>Veja quem está retornando vazio.</strong>
+                        O app mostra motoristas verificados voltando para a sua região.
+                    </li>
+                    <li>
+                        <strong>Pague menos pelo frete.</strong>
+                        Um caminhão que já ia voltar cobra menos do que um frete dedicado.
+                    </li>
+                </ul>
+                <a href="#cadastro" class="btn btn-verde">Publicar uma carga</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ===================== SIMULADOR ===================== -->
+    <section id="simulador" class="secao secao-clara">
+        <div class="container simulador-grid">
+            <div class="simulador-texto">
+                <p class="eyebrow">Simulador</p>
+                <h2>Quanto custa voltar vazio?</h2>
+                <p class="secao-sub">
+                    Arraste e veja quanto dinheiro um retorno vazio queima em diesel
+                    e custos operacionais — e quanto dá para recuperar com um frete
+                    de retorno pelo CARGOO.
+                </p>
+            </div>
+
+            <form class="simulador-card" id="form-simulador">
+                <label for="km">Distância do retorno: <output id="km-valor">450</output> km</label>
+                <input type="range" id="km" min="50" max="2000" step="10" value="450">
+
+                <label for="custo-km">Custo por km rodado: R$ <output id="custo-valor">2,30</output></label>
+                <input type="range" id="custo-km" min="1.5" max="4" step="0.1" value="2.3">
+
+                <div class="resultado">
+                    <div class="res-linha res-perda">
+                        <span>Prejuízo rodando vazio</span>
+                        <strong id="res-prejuizo">R$ 1.035</strong>
+                    </div>
+                    <div class="res-linha res-ganho">
+                        <span>Com frete de retorno (estim.)</span>
+                        <strong id="res-ganho">+ R$ 1.550</strong>
+                    </div>
+                    <div class="res-linha res-total">
+                        <span>Diferença no seu bolso</span>
+                        <strong id="res-total">R$ 2.585</strong>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===================== CADASTRO ===================== -->
+    <section id="cadastro" class="secao secao-escura">
+        <div class="container cadastro-grid">
+            <div>
+                <p class="eyebrow eyebrow-claro">Lista de espera</p>
+                <h2>Entre na fila do CARGOO</h2>
+                <p class="secao-sub">
+                    Estamos preparando o lançamento. Deixe seu contato e seja avisado
+                    quando o app chegar na sua região.
+                </p>
+            </div>
+
+            <form class="form-cadastro" id="form-cadastro" novalidate>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+
+                <label for="perfil">Eu sou</label>
+                <select id="perfil" name="perfil">
+                    <option value="motorista">Motorista autônomo</option>
+                    <option value="empresa">Empresa / embarcador</option>
+                    <option value="transportadora">Transportadora</option>
+                </select>
+
+                <button type="submit" class="btn btn-laranja btn-full">Quero ser avisado</button>
+                <p class="form-msg" id="form-msg" role="status"></p>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer class="rodape">
+    <div class="container rodape-grid">
+        <a href="#topo" class="logo logo-rodape">CARG<span class="logo-o">O</span>O</a>
+        <p>Projeto acadêmico — disciplina de Programação Front-End · Engenharia de Software</p>
+        <p>Feito com HTML, CSS e JavaScript. © 2026 Equipe CARGOO</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
