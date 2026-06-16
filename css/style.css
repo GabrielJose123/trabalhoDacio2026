@@ -1,0 +1,569 @@
+/* =========================================================
+   CARGOO — style.css
+   Paleta inspirada na estrada brasileira:
+   - Asfalto  #161B26  (fundo escuro / texto)
+   - Sinalização (laranja) #FF7A1A  → lado do motorista
+   - Placa rodoviária (verde) #1E7A46 → lado da empresa
+   - Faixa amarela #FFD23F → detalhes
+   - Concreto #F3F4F6 → fundos claros
+   ========================================================= */
+
+:root {
+    --asfalto: #161B26;
+    --asfalto-2: #1F2735;
+    --laranja: #FF7A1A;
+    --laranja-escuro: #E06200;
+    --verde: #1E7A46;
+    --verde-escuro: #155C34;
+    --amarelo: #FFD23F;
+    --concreto: #F3F4F6;
+    --branco: #FFFFFF;
+    --cinza-texto: #4B5563;
+
+    --fonte-display: "Saira Condensed", sans-serif;
+    --fonte-corpo: "Archivo", sans-serif;
+
+    --raio: 14px;
+    --container: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: var(--fonte-corpo);
+    color: var(--asfalto);
+    background: var(--branco);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-display);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.05;
+    margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 800; }
+h2 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+    display: inline-block;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: var(--branco);
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--raio);
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
+
+.btn-laranja { background: var(--laranja); }
+.btn-laranja:hover { background: var(--laranja-escuro); }
+.btn-verde { background: var(--verde); }
+.btn-verde:hover { background: var(--verde-escuro); }
+.btn-full { width: 100%; }
+
+/* ---------- Eyebrow / etiquetas ---------- */
+.eyebrow {
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    color: var(--laranja);
+    margin: 0 0 8px;
+}
+.eyebrow-claro { color: var(--amarelo); }
+
+/* =========================================================
+   TOPO / HERO
+   ========================================================= */
+.topo {
+    background: var(--asfalto);
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    font-family: var(--fonte-display);
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--branco);
+    text-decoration: none;
+}
+.logo-o { color: var(--laranja); }
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+.menu a:hover { color: var(--amarelo); }
+.menu a.btn-menu { color: var(--branco); padding: 10px 20px; font-size: 0.9rem; }
+
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+.menu-btn span {
+    width: 26px;
+    height: 3px;
+    background: var(--branco);
+    border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 48px 24px 90px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: #C7CDD8;
+    max-width: 52ch;
+}
+
+.riscado {
+    color: var(--laranja);
+    text-decoration: line-through;
+    text-decoration-thickness: 5px;
+    text-decoration-color: var(--amarelo);
+}
+
+.hero-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+/* Mock do app */
+.telefone {
+    background: var(--asfalto-2);
+    border: 1px solid #2C3648;
+    border-radius: 28px;
+    padding: 20px;
+    max-width: 360px;
+    margin-left: auto;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    transform: rotate(2deg);
+}
+
+.telefone-topo {
+    font-family: var(--fonte-display);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    color: #9AA3B2;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.ponto {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--amarelo);
+    display: inline-block;
+    animation: pulsar 1.6s infinite;
+}
+@keyframes pulsar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.card-carga {
+    background: var(--branco);
+    color: var(--asfalto);
+    border-radius: var(--raio);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+}
+.card-carga.destaque { border: 2px solid var(--laranja); }
+
+.rota {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.seta { color: var(--laranja); }
+
+.carga-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--cinza-texto);
+    margin-top: 6px;
+}
+.carga-info strong { color: var(--verde); font-size: 1.05rem; }
+
+.btn-mini {
+    margin-top: 10px;
+    width: 100%;
+    background: var(--laranja);
+    color: var(--branco);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Faixa de estrada (divisor assinatura) */
+.estrada {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: var(--asfalto-2);
+}
+.faixa {
+    stroke: var(--amarelo);
+    stroke-width: 6;
+    stroke-dasharray: 60 40;
+    animation: rodar 2.5s linear infinite;
+}
+@keyframes rodar {
+    to { stroke-dashoffset: -100; }
+}
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+.secao { padding: 90px 0; }
+
+.secao-escura {
+    background: var(--asfalto);
+    color: var(--branco);
+}
+.secao-clara { background: var(--concreto); }
+
+.secao-sub {
+    font-size: 1.1rem;
+    max-width: 62ch;
+    color: var(--cinza-texto);
+}
+.secao-escura .secao-sub { color: #C7CDD8; }
+
+/* Números / contadores */
+.numeros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 56px;
+}
+.numero {
+    border-top: 4px solid var(--laranja);
+    padding-top: 18px;
+}
+.numero strong {
+    display: block;
+    font-family: var(--fonte-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    color: var(--amarelo);
+    line-height: 1;
+}
+.numero p { color: #C7CDD8; margin: 10px 0 0; }
+.nota { font-size: 0.8rem; color: #76808F; margin-top: 32px; }
+
+/* Duo motorista / empresa */
+.duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.lado {
+    border-radius: var(--raio);
+    padding: 40px 32px;
+}
+.lado-motorista {
+    background: #FFF3E8;
+    border: 1px solid #FFD9B8;
+}
+.lado-empresa {
+    background: #EAF5EE;
+    border: 1px solid #BFE2CC;
+}
+
+.placa {
+    display: inline-block;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    color: var(--branco);
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+}
+.placa-laranja { background: var(--laranja); }
+.placa-verde { background: var(--verde); }
+
+.lista-passos {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    counter-reset: passo;
+}
+.lista-passos li {
+    counter-increment: passo;
+    position: relative;
+    padding: 14px 0 14px 52px;
+    border-bottom: 1px dashed rgba(22, 27, 38, 0.2);
+}
+.lista-passos li::before {
+    content: counter(passo);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-display);
+    font-weight: 800;
+    color: var(--branco);
+}
+.lado-motorista .lista-passos li::before { background: var(--laranja); }
+.lado-empresa .lista-passos li::before { background: var(--verde); }
+
+/* =========================================================
+   SIMULADOR
+   ========================================================= */
+.simulador-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.simulador-card {
+    background: var(--branco);
+    border-radius: var(--raio);
+    padding: 32px;
+    box-shadow: 0 12px 40px rgba(22, 27, 38, 0.12);
+}
+
+.simulador-card label {
+    display: block;
+    font-weight: 600;
+    margin: 18px 0 8px;
+}
+.simulador-card label:first-child { margin-top: 0; }
+
+.simulador-card output {
+    color: var(--laranja-escuro);
+    font-weight: 700;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--laranja);
+    cursor: pointer;
+}
+
+.resultado {
+    margin-top: 28px;
+    border-top: 2px dashed #D6D9E0;
+    padding-top: 18px;
+}
+.res-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+}
+.res-linha strong {
+    font-family: var(--fonte-display);
+    font-size: 1.4rem;
+}
+.res-perda strong { color: #C0341D; }
+.res-ganho strong { color: var(--verde); }
+.res-total {
+    border-top: 1px solid #E2E5EA;
+    margin-top: 8px;
+    padding-top: 14px;
+}
+.res-total strong { font-size: 1.9rem; color: var(--asfalto); }
+
+/* =========================================================
+   CADASTRO
+   ========================================================= */
+.cadastro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.form-cadastro {
+    background: var(--asfalto-2);
+    border: 1px solid #2C3648;
+    border-radius: var(--raio);
+    padding: 32px;
+}
+
+.form-cadastro label {
+    display: block;
+    font-weight: 600;
+    margin: 16px 0 6px;
+    color: #C7CDD8;
+}
+.form-cadastro label:first-child { margin-top: 0; }
+
+.form-cadastro input,
+.form-cadastro select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #3A465C;
+    background: var(--asfalto);
+    color: var(--branco);
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+}
+.form-cadastro input:focus,
+.form-cadastro select:focus {
+    outline: 2px solid var(--laranja);
+    border-color: var(--laranja);
+}
+
+.form-cadastro .btn { margin-top: 24px; }
+
+.form-msg {
+    margin: 14px 0 0;
+    font-weight: 600;
+    min-height: 1.4em;
+}
+.form-msg.ok { color: #6FE3A1; }
+.form-msg.erro { color: #FF9E7A; }
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+.rodape {
+    background: var(--asfalto);
+    color: #9AA3B2;
+    padding: 48px 0;
+    border-top: 4px solid var(--laranja);
+}
+.rodape-grid { text-align: center; }
+.rodape p { margin: 8px 0 0; font-size: 0.9rem; }
+.logo-rodape { font-size: 1.4rem; }
+
+/* =========================================================
+   ANIMAÇÃO DE ENTRADA (revelar ao rolar)
+   ========================================================= */
+.revelar {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.revelar.visivel {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .faixa, .ponto { animation: none; }
+    .revelar { opacity: 1; transform: none; transition: none; }
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 900px) {
+    .hero,
+    .duo,
+    .simulador-grid,
+    .cadastro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero { padding-bottom: 60px; }
+    .telefone { margin: 0 auto; transform: none; }
+
+    .numeros { grid-template-columns: 1fr; }
+
+    .menu-btn { display: flex; }
+
+    .menu {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--asfalto-2);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 18px;
+        display: none;
+        z-index: 10;
+        border-bottom: 3px solid var(--laranja);
+    }
+    .menu.aberto { display: flex; }
+    .navbar { position: relative; }
+}
