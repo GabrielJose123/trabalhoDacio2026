@@ -1,13 +1,3 @@
-/* =========================================================
-   CARGOO — style.css
-   Paleta inspirada na estrada brasileira:
-   - Asfalto  #161B26  (fundo escuro / texto)
-   - Sinalização (laranja) #FF7A1A  → lado do motorista
-   - Placa rodoviária (verde) #1E7A46 → lado da empresa
-   - Faixa amarela #FFD23F → detalhes
-   - Concreto #F3F4F6 → fundos claros
-   ========================================================= */
-
 :root {
     --asfalto: #161B26;
     --asfalto-2: #1F2735;
